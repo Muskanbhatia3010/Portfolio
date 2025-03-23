@@ -5,11 +5,18 @@ import About from '../components/about';
 
 const Home = () => {
     return (
-        <div>
-            <Hero />
-            <ProjectGallery />
-            <About />
+        <div className="split-layout">
+            <div className="left-panel">
+                <Hero /> {/* or name, tagline, etc. */}
+            </div>
+        
+            <div className="right-panel">
+                <About />
+                <ProjectGallery />
+                {/* Add more sections here */}
+            </div>
         </div>
+
     );
 };
 

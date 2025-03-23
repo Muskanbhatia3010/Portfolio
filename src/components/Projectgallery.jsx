@@ -19,13 +19,13 @@ const ProjectGallery = () => {
         fetchData()
     }, [restPath])
     return (     
-        <div>
+      <div className='section-card'>
       {restData.map(project => (
         <div key={project.id}>
           <h2>{project.title.rendered}</h2>
-          {project.featured_media !== 0 && project._embedded && (
+          {/* {project.featured_media !== 0 && project._embedded && (
             <FeaturedImage featuredImageObject={project._embedded['wp:featuredmedia'][0]} />
-          )}
+          )} */}
           <p>{project.acf.shortdescription}</p>
           <div className="project-skills">
              <strong>Skills: </strong>
@@ -39,9 +39,9 @@ const ProjectGallery = () => {
                 <Skill key={skillId} skillId={skillId} />
                 
             ))}
-</div>
-
         </div>
+
+      </div>
       ))}
     </div>       
     )

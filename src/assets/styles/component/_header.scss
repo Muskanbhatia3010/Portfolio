@@ -1,0 +1,11 @@
+@use "../core/variables" as *;
+
+.acf-image img{
+    height: 100%;
+    width: 100%;
+    max-height: 5rem;
+    max-width: 5rem;
+    position: absolute;
+    top:0;
+    left: 0;
+}

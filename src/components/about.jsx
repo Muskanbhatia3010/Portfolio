@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
 import AllSkills from './AllSkill'
-
+import '../assets/styles/templates/_home.scss'
 
 const About = () => {
     const restPath = restBase + 'pages/14' 
@@ -19,8 +19,10 @@ const About = () => {
     }, [restPath])
     return (
         <>
-            <p>{restData.acf?.about}</p>
-            <AllSkills />            
+           <div className='section-card'>
+                <p>{restData.acf?.about}</p>
+                <AllSkills />     
+           </div>       
         </>
     )
 }

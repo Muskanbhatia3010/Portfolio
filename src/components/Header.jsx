@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
-
-
+import ACFImage from './ACFImage'
+import '../assets/styles/component/_header.scss'
 const Header = () => {
-    const restPath = restBase + 'media/49' 
+    const restPath = restBase + 'pages/14?_embed&_fields=acf&acf_format=standard' 
     const [restData, setData] = useState([])
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const Header = () => {
     }, [restPath])
     return (
         <>
-        <img src={restData.source_url} alt="Logo" className="logo" />
+            {restData.acf?.logo && <ACFImage image={restData.acf.logo} />}
         </>            
     )
 }

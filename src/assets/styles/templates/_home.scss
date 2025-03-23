@@ -1,0 +1,42 @@
+.split-layout {
+    display: flex;
+    flex-direction: column; // mobile-first: stacked layout
+  }
+  
+  .left-panel {
+    width: 100%;
+    padding: 1.5rem;
+    background-color: #1a1a2e; // example dark background
+    color: white;
+  }
+  
+  .right-panel {
+    width: 100%;
+    padding: 1.5rem;
+    background-color: white;
+  }
+  
+  /* Desktop layout — activate split view here */
+  @media screen and (min-width: 768px) {
+    .split-layout {
+      flex-direction: row;
+      height: 100vh;
+      overflow: hidden;
+    }
+  
+    .left-panel {
+      position: sticky;
+      top: 0;
+      width: 40vw;
+      height: 100vh;
+      flex-shrink: 0;
+    }
+  
+    .right-panel {
+      width: 60vw;
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+    }
+  }
+  
