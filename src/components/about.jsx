@@ -19,7 +19,7 @@ const About = () => {
     }, [restPath])
     return (
         <>
-           <div className='section-card'>
+           <div>
                 <p>{restData.acf?.about}</p>
                 <AllSkills />     
            </div>       

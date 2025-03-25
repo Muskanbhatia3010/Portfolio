@@ -19,7 +19,7 @@ const ProjectGallery = () => {
         fetchData()
     }, [restPath])
     return (     
-      <div className='section-card'>
+      <div className='scroll-cards'>
       {restData.map(project => (
         <div key={project.id}>
           <h2>{project.title.rendered}</h2>

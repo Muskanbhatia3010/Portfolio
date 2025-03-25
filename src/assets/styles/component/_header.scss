@@ -8,4 +8,44 @@
     position: absolute;
     top:0;
     left: 0;
+    z-index: 101;
 }
+.footer-nav{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    background-color: #303030;
+    margin: 0;
+    left: 0;
+    right: 0;
+    padding: 1.2rem;
+    // padding: calc(1rem + 1vw) calc(1.5rem + 2vw);
+    filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
+    gap: 3vw;
+    margin: 0;
+    justify-content: center;
+}
+.footer-nav li a {
+    color: white;
+    display: inline-block;
+    font-family: Comfortaa, sans-serif;
+    font-size: calc(.8rem + .85vw);
+    font-weight: 700;
+    position: relative;
+    text-decoration: none;
+    text-transform: lowercase;
+}
+.footer-nav li:not(:last-child) a {
+    border-right: 1px solid #efeaea;
+    padding-right: 2vw;
+}
+.section-card{
+    position: absolute;
+    bottom: 22rem;
+    margin: 2rem;
+}
+// .mobile-nav{
+//     padding: calc(1rem + 1vw) calc(1.5rem + 2vw);
+// }

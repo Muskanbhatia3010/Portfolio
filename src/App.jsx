@@ -8,14 +8,15 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/projects" element={<Projects />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} /> */}
-      </Routes>
-      <Footer />
+      <div className='app-layout'>  
+       <div className='left-panel'> <Header /></div>
+       <div className='right-panel'>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        <Footer />
+       </div>
+      </div>
     </>
   );
 }
