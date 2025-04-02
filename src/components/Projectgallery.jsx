@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
 import FeaturedImage from './FeaturedImage'
 import Skill from './Skill'
-
+import '../assets/styles/component/_projectgallery.scss'
 
 const ProjectGallery = () => {
     const restPath = restBase + 'projects?_embed' 
@@ -19,16 +19,14 @@ const ProjectGallery = () => {
         fetchData()
     }, [restPath])
     return (     
-      <div className='scroll-cards'>
+      <section className='scroll-cards' id='projects'>
       {restData.map(project => (
-        <div key={project.id}>
-          <h2>{project.title.rendered}</h2>
-          {/* {project.featured_media !== 0 && project._embedded && (
+        <article key={project.id}>
+          {project.featured_media !== 0 && project._embedded && (
             <FeaturedImage featuredImageObject={project._embedded['wp:featuredmedia'][0]} />
-          )} */}
-          <p>{project.acf.shortdescription}</p>
+          )}
+          <h2>{project.title.rendered}</h2>
           <div className="project-skills">
-             <strong>Skills: </strong>
             {project.acf.skill &&
             // project.acf.skill.map((skillId, index, arr) => (
             //     <span key={skillId} className="skill-item">
@@ -41,9 +39,9 @@ const ProjectGallery = () => {
             ))}
         </div>
 
-      </div>
+      </article>
       ))}
-    </div>       
+    </section>       
     )
 }
 

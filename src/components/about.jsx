@@ -20,8 +20,8 @@ const About = () => {
     return (
         <>
            <div>
-                <p>{restData.acf?.about}</p>
-                <AllSkills />     
+           <    AllSkills />   
+                <p>{restData.acf?.about}</p>  
            </div>       
         </>
     )

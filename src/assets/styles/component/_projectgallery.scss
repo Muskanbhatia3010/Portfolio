@@ -1,0 +1,62 @@
+.scroll-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    > article {
+      background: #f2edf8; // soft light card bg
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      // box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      // transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      overflow: hidden;
+  
+      &:hover {
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+  
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        margin: 0px;
+      }
+  
+      h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        color: #1a1a1a;
+      }
+  
+      .project-skills {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+  
+        .skill-item {
+          background: #ddd;
+          border-radius: 999px;
+          padding: 0.3rem 0.8rem;
+          font-size: 0.85rem;
+          font-weight: 500;
+          color: #333;
+        }
+      }
+    }
+  }
+  
+.featured-image{
+  margin: 0px;
+}
