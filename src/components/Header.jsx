@@ -51,7 +51,7 @@ const Header = () => {
       }, [charIndex, isDeleting, index, phrases]);
     return (
         <header>
-            {restData.acf?.logo && <ACFImage image={restData.acf.logo} />}
+            {restData.acf?.logo && <ACFImage image={restData.acf.logo} className="site-logo" />}
             <div className='hero'>
 <               div className="hero-content">
                     <section className="introduction">

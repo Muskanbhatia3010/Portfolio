@@ -1,62 +1,64 @@
 .scroll-cards {
+  padding: 1rem;
+  
+  // .swiper {
+  //   width: 100%;
+  // }
+
+  .swiper-slide {
+    background: #1c1b29;
+    border-radius: 2rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.18);
+    padding: 1rem;
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 2rem;
-  
-    @media screen and (min-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
+    justify-content: space-evenly;
+    // min-width: 150px;
+    width: 80%;
+    max-width: 250px;
+    margin: auto;
+
+    .container{
+      position: relative;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     }
-  
-    @media screen and (min-width: 1024px) {
-      grid-template-columns: repeat(3, 1fr);
+    .container::after{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 1.25rem 1.25rem 0 0;
+      opacity: 0.7;
     }
-  
-    > article {
-      background: #f2edf8; // soft light card bg
-      border-radius: 1.5rem;
-      padding: 1.5rem;
-      // box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      // transition: transform 0.3s ease, box-shadow 0.3s ease;
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 1.25rem 1.25rem 0 0;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      color: white;
+      margin-top: 0.5rem;
       text-align: center;
-      overflow: hidden;
-  
-      &:hover {
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-      }
-  
-      img {
-        width: 100%;
-        height: auto;
-        border-radius: 1rem;
-        margin-bottom: 1rem;
-        margin: 0px;
-      }
-  
-      h2 {
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
-        color: #1a1a1a;
-      }
-  
-      .project-skills {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-  
-        .skill-item {
-          background: #ddd;
-          border-radius: 999px;
-          padding: 0.3rem 0.8rem;
-          font-size: 0.85rem;
-          font-weight: 500;
-          color: #333;
-        }
+    }
+
+    .project-skills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+
+      .skill {
+        background: #ddd;
+        border-radius: 999px;
+        padding: 0.3rem 0.8rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: #333;
       }
     }
   }
-  
-.featured-image{
-  margin: 0px;
 }

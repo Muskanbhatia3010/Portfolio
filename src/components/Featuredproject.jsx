@@ -1,11 +1,26 @@
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
+import { restBase } from '../utilities/Utilities';
+import FeaturedImage from './FeaturedImage';
 import '../assets/styles/component/_featuredproject.scss';
 
 const PhoneShowcase = () => {
 
   const phoneRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const restPath = restBase + 'projects/87?_embed' 
+  const [restData, setData] = useState([])
+  
+  useEffect(() => {
+    const fetchData = async () => {
+    const response = await fetch(restPath)
+      if ( response.ok ) {
+        const data = await response.json()
+        setData(data)
+      }
+    }
+      fetchData()
+  }, [restPath])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -39,14 +54,11 @@ const PhoneShowcase = () => {
             </div>
           </div>
           <div ref={phoneRef} className={`phone-scale ${isVisible ? 'enter' : ''}`}>
-              <img src="/images/Featurephone.png" className="phone-mockup" />
+            <img src="/images/FinalFeature.png" alt="Feature" className='phone-mockup'/>
           </div>
         </div>
-        <h3 className='ProjectName'>Travel & Event Management</h3>
-        <p>
-          Deployed scalable travel, event and telemedicine web and hybrid mobile apps using React SPA and PWA.<br />
-          Collaborated in 140+ projects with 50+ clients worldwide. Passionate about data analytics and visualization.
-        </p>
+        <h3 className='ProjectName'>{restData.title?.rendered}</h3>
+        <p>{restData.acf?.shortdescription}</p>
     </section>
   );
 };
