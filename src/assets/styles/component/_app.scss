@@ -1,44 +1,26 @@
 @use "../core/variables" as *;
 
 body{
-    margin: 0;
-  }
+  margin: 0;
+
   .app-layout {
     display: flex;
     flex-direction: column; 
   }
-  
-  .left-panel {
-    width: 100%;
-    background-color: $leftpanel-background;
-    height: 100vh;
-    position: relative;
-    color: white;
-    top: 0;
-  }
-  
-  .right-panel {
+  .right-panel{
     height: 100vh;
     width: 100%;
   }
-  @media screen and (min-width: 768px) {
+  
+  @media (min-width: $tablet-breakpoint) {
     .app-layout {
       flex-direction: row;
       height: 100vh;
     }
-  
-    .left-panel {
-      width: 45vw;
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      flex-shrink: 0;
-    }
-  
+
     .right-panel {
-      width: 55vw;
-      height: 100vh;
+      width: 50vw;
       overflow-y: scroll;
     }
-  }
-  
+  }  
+}

@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
 import ACFImage from './ACFImage'
+import { FaHome, FaProjectDiagram, FaUserAlt, FaCode, FaEnvelope } from 'react-icons/fa';
 import '../assets/styles/component/_header.scss'
+
 const Header = () => {
     const restPath = restBase + 'pages/14?_embed&_fields=acf&acf_format=standard' 
     const [restData, setData] = useState([])
@@ -38,7 +40,7 @@ const Header = () => {
           }
     
           if (!isDeleting && charIndex === currentPhrase.length) {
-            setTimeout(() => setIsDeleting(true), 1000);
+            setTimeout(() => setIsDeleting(true), 1200);
           }
     
           if (isDeleting && charIndex === 0) {
@@ -50,42 +52,27 @@ const Header = () => {
         return () => clearTimeout(timeout);
       }, [charIndex, isDeleting, index, phrases]);
     return (
-        <header>
+        <header className='left-panel'>
             {restData.acf?.logo && <ACFImage image={restData.acf.logo} className="site-logo" />}
             <div className='hero'>
-<               div className="hero-content">
-                    <section className="introduction">
+                <div className="hero-content">
+                    <section>
                             <h1>{restData.acf?.Name}</h1>
                             <h2 className="typing-tagline">{text}<span className="cursor">|</span></h2>
                     </section>
                     <a className='call-to-action' href="#projects">
-                            <strong className="btn btn-primary">View Projects</strong>
+                            <p className="btn-text">View Projects</p>
                     </a>
                 </div>
-                    <nav>
-                        <ul className='footer-nav'>
-                            <li>
-                                <a id='home' href="#home"> Home
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#projects"> Projects
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#about">About
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#about">Skills
-                                </a>
-                            </li>
-                            <li>
-                                <a id='contact' href="#contact"> Contact
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
+                <nav>
+                    <ul className='footer-nav'>
+                    <li id='home'><a href="#home">Home</a></li>
+                    <li><a href="#projects"> Projects</a></li>
+                    <li><a href="#about"> About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a id='contact' href="#contact"> Contact</a></li>
+                    </ul>
+                </nav>
                 </div>
         </header>            
     )

@@ -1,24 +1,73 @@
-.all-skills{
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: .5rem;
-    padding: 1rem;
-    background-color: black;
+@use "../core/variables" as *;
+@use "../core/mixins" as *;
+.all-skills-wrapper{
+    background-color: $rightpanel-background-skills;
+    min-height: 100vh;
+    h2{
+        margin:0;
+        padding: 1.5rem 2.5rem;
+        font-family: $headings-font;
+        text-align: center;
+        font-size: $h2-font-size;
+        font-weight: 800;
+    }
+    .category-block{
+        margin: .3rem 1rem 0.75rem;
+        padding: .5rem 1rem 0.5rem;
+    }
+    h3{
+        margin:0;
+        font-size: 1.3rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-weight: 800;
+        text-align: center;
+        font-family: $headings-font;
+    }
+    .skills-grid{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding-left: 1rem;
+        padding-right: 1rem;
+        gap: .5rem;
+        margin-top: .5rem;
+        border-radius: .5rem;;
+    }
 }
 .skill-item{
-    background-color: antiquewhite;
-    align-items: centers;
     display: flex;
-}
-.skill{
-    display: flex;
+    flex-direction: row;
     align-items: center;
     gap: .5rem;
+    padding: 0.5rem 0.25rem;
+    border-radius: .375rem;
+    .skill{
+        display: flex;
+        flex-direction: row;
+        gap:0.5rem;
+        align-items: center;
        img{
         max-width: 1.875rem;
         max-height: 1.875rem;
        }
        .acf-image{
-        margin: .3125rem;
+        margin: 0rem;
        }
+       p{
+        font-size: 0.8rem;
+        flex-direction: column;
+        display: flex;
+        margin: 0;
+       }
+}
+}
+@media (min-width: $tablet-breakpoint){
+    .all-skills-wrapper{
+        position: sticky;
+        top:0;
+        z-index: 5;
+        .skills-grid{
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
 }

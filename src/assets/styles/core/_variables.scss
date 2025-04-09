@@ -1,3 +1,28 @@
-$logo-height: 100px;
-$logo-width: 100px;
+//background color variables
 $leftpanel-background: #000000;
+$rightpanel-background-featuredwork: #FEF4FF;
+$rightpanel-background-projectgallery:#FFF8F0;
+$project-card-background: #fefbe9;
+$rightpanel-background-skills:#FEF4FF;
+//font variables
+$headings-font: public-sans, sans-serif;
+$body-font: barlow, sans-serif;
+$h2-font-size: 4.5vh;
+$body-font-size: 2vh;
+$heading-color: #2f2f22;
+
+//height variables
+$height-for-mobile: calc(100vh - 3.5rem);
+
+// text color variables
+$leftpanel-heading: #ffffff;
+
+//Link variables
+
+
+//Layout variables
+$margin-mobile: 2.5rem;
+$full-height: 100vh;
+
+// Breakpoints for media queries
+$tablet-breakpoint: 48.0625rem;

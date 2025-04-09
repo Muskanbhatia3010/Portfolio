@@ -1,104 +1,76 @@
-.phone-showcase {
+@use "../core/variables" as *;
+@use "../core/mixins" as *;
+
+.FeaturedProject {
     display: flex;
     flex-direction: column;
-    background: #FEF4FF;
-    color: #2f2f22;
-    height: 100vh;
-    font-family: monospace;
-    gap: 1rem;
-    justify-content: space-evenly;
+    background: $rightpanel-background-featuredwork;
+    color: $heading-color;
+    min-height: $height-for-mobile;
   
       h2 {
+        font-family: $headings-font;
         text-align: center;
-        font-size: 5vh;
+        font-size: $h2-font-size;
         font-weight: 800;
-        margin: 1.5rem;
+        margin: 1.5rem 2.5rem;
       }
-  
-      p {
-        font-size: 1rem;
-        max-width: 500px;
-        line-height: 1.7;
-        margin: 0 2.5rem 2.5rem;
+       .Image-layout-wrapper {
+        position: relative;
+        margin: 0 2.5rem;
+        .phone-mockup{
+          width: 100%;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+      h3{
+        font-size:4vh ;
+        font-weight: 800;
+        margin: 1.5rem 2.5rem;
+        text-align: center;
+        font-family: $headings-font;
+      }
+    .phone-scale {
+      opacity: 0;
+      transform: translateY(-60px);
+      transition: transform 0.8s ease, opacity 0.8s ease;
+    }
+    
+    .phone-scale.enter {
+      opacity: 1;
+      transform: translateY(0);
+    }
+      .description {
+        font-family: $body-font;
+        max-width: 60%;
+        margin: 0 auto;
+        font-size: $body-font-size;
         align-self: center;
       }
-    }
-  
-    .phone-wrapper {
-      position: relative;
-      display: flex;
-      justify-content: space-evenly;
-      margin: 0 2.5rem;
-    
-      .arrow-button-wrapper{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-      }
-      .phone-mockup{
-        max-width: 6.25rem;
-        width: 100%;
-        rotate: -15deg;
-        display: block;
-        margin: 0 auto;
-      }
-  
-      .tag {
-        margin-top: 1rem;
-  
-        span {
-          font-size: 0.9rem;
-          opacity: 0.7;
-        }
-  
-        .view-btn {
-          background: #8a2be2;
-          color: white;
-          padding: 0.5rem 1.2rem;
-          border-radius: 4px;
-          text-decoration: none;
-          font-weight: bold;
-          display: inline-block;
-        }
-      }
-    }
-    .ProjectName{
-      font-size:4vh ;
-      font-weight: 800;
-      margin: 1.5rem 2.5rem;
-      text-align: center;
+      .call-to-action {
+        @include button-style(#8a2be2, white, $body-font-size);
 
+        .btn-text{
+          font-family: $body-font;
+          margin: 0;
+        }
+      }
     }
-  .phone-scale {
-    opacity: 0;
-    transform: translateY(-60px);
-    transition: transform 0.8s ease, opacity 0.8s ease;
-  }
   
-  .phone-scale.enter {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .image-scale {
-    opacity: 0;
-    transform: translateY(-60px);
-    transition: transform 0.8s ease, opacity 0.8s ease;
-    transition-delay: 0.6s;
-  }
-  
-  .image-scale.enter {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    
   @media (min-width: 768px) {
-    .phone-showcase {
-      flex-direction: column;
-      // height: 80vh;
-        .phone-wrapper{
-          justify-content:space-evenly;
-             .phone-mockup{
-              max-width: 12rem;
-             }
-    }
+    .FeaturedProject {
+      height: 100vh;
+      justify-content: space-evenly;
+      position: sticky;
+      top:0;
+      z-index: 1;
+
+      .Image-layout-wrapper{
+        .phone-mockup{
+        max-height: 23rem;
+        max-width: 31.25rem;
+      }
   }
-}
+}}
