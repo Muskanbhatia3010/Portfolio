@@ -1,0 +1,106 @@
+@use "../core/variables" as *;
+@use "../core/mixins" as *;
+
+.project-page{
+    background-color: $rightpanel-background-individualproject;
+    h2{
+        padding: 1.5rem 2.5rem;
+        margin: 0;
+        font-family: $headings-font;
+        text-align: center;
+        font-size: 3vh;
+        font-weight: 800;
+      }
+      .project-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        max-width: 50rem;
+        margin: 0 auto;
+        .acf-image{
+            margin:0;
+            img{
+            max-width: 17.5rem;
+        }}
+        .project-description{
+            font-size: $body-font-size;
+            text-align: center;
+            padding: 0 2rem;
+            p{
+                font-family: $body-font;
+                text-align: left;
+                font-size: clamp(0.75rem, 1.7vh, 1.5rem);
+            }
+        }
+        .project-skills {
+            display: flex;
+            justify-content: left;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.5rem;
+
+        
+            .skill {
+                background: #a2d2ff;
+                border-radius: 1rem;
+                padding: 0.3rem 0.8rem;
+                font-size: 2vh;
+                font-weight: 500;
+                color: #333;
+                p{
+                    margin: 0;
+                    font-family: $body-font;
+                    font-size: clamp(0.75rem, 1.4vh, 1.4rem);
+                }
+            }
+        }
+      }
+      h3{
+        padding: 0 2rem;
+        font-size: clamp(0.75rem, 3vh, 3rem);
+        margin-bottom: 0 ;
+        font-family: $headings-font;
+        font-weight: 600;
+      }
+      .project-text {
+        padding: 0 2rem;
+        ul{
+            padding: 1rem;
+             li{
+            text-align: left;
+            font-family: $body-font;
+            font-size: clamp(0.75rem, 1.7vh, 1.5rem);
+        }
+    }
+}
+#learning
+{
+    padding:1rem  2rem 4rem;
+    text-align: left;
+    font-family: $body-font;
+    font-size: clamp(0.75rem, 1.7vh, 1.5rem);
+    
+}
+}
+
+@media (min-width:1500px){
+    .project-page{
+        .project-info{
+            flex-direction: row;
+            gap:0.5rem;
+            .acf-image{
+                margin:1.5rem;
+                img{
+                    max-width: 20rem;
+                }
+            }
+            .project-description{
+                padding: 0 1rem;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}
