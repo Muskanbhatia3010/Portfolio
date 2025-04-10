@@ -56,6 +56,22 @@
                 }
             }
         }
+        .project-icons{
+            display: flex;
+            justify-content:center;
+            gap: 1rem;
+            margin-top: 1rem;
+            a{
+                text-decoration: none;
+                color: $heading-color;
+                font-size: 3vh;
+                transition: all 0.3s ease-in-out;
+                &:hover{
+                    transform: scale(1.2);
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+        }
       }
       h3{
         padding: 0 2rem;
@@ -84,7 +100,13 @@
     
 }
 }
-
+@media (min-width: $tablet-breakpoint) {
+    .project-page{
+        .project-info{
+            .project-icons {
+        justify-content: flex-start;
+    }
+}}}
 @media (min-width:1500px){
     .project-page{
         .project-info{

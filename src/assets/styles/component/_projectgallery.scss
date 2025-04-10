@@ -22,17 +22,24 @@
     .project-card{
       max-width: 13vw;
       min-width: 13rem;
-      max-height: 18rem;
+      // max-height: 18rem;
       border-radius: 2rem;
       display: grid;
       grid-template-rows: auto auto auto;
       padding: 1rem;
       background-color: $project-card-background;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+
+      &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
         img{
           width: 100%;
           border-radius: 1rem;
-          object-fit: cover;
+          object-fit:cover;
           max-height: 150px;
          }
          .content{
@@ -49,14 +56,21 @@
               gap: 0.4rem;
               margin-top: 0.5rem;
         
-              // .skill {
-              //   background: #ddd;
-              //   border-radius: 999px;
-              //   padding: 0.3rem 0.8rem;
-              //   font-size: 0.8rem;
-              //   font-weight: 500;
-              //   color: #333
-              // }
+              .skill {
+                background: #E9F6F2 ;
+                border-radius: 1.25rem;
+                padding: 0.3rem 0.8rem;
+                font-size: 0.8rem;
+                font-weight: 500;
+                color: #333;  
+                border: 1px solid #CCEDE4;
+                p{
+                  margin: 0;
+                  font-size: clamp(0.75rem, 1.4vh, 1.4rem);
+                  font-family: $body-font;
+                }
+             
+              }
             }
          }
     }

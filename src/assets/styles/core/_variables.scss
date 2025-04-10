@@ -1,10 +1,11 @@
 //background color variables
 $leftpanel-background: #000000;
 $rightpanel-background-featuredwork: #FEF4FF;
-$rightpanel-background-projectgallery:#FFF8F0;
-$project-card-background: #fefbe9;
-$rightpanel-background-skills:#FEF4FF;
-$rightpanel-background-individualproject: #BDE0FE;
+$rightpanel-background-projectgallery:#F0FFFA;
+$project-card-background: #fbf9f9;
+$rightpanel-background-skills:#FFFDF6;
+$rightpanel-background-individualproject: #F3FCFF;
+$rightpanel-background-about:#F8F3FF;
 //font variables
 $headings-font: public-sans, sans-serif;
 $body-font: barlow, sans-serif;
@@ -24,6 +25,7 @@ $leftpanel-heading: #ffffff;
 //Layout variables
 $margin-mobile: 2.5rem;
 $full-height: 100vh;
+$padding-text: 0 2.5rem;
 
 // Breakpoints for media queries
 $tablet-breakpoint: 48.0625rem;

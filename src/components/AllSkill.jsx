@@ -42,8 +42,8 @@ const AllSkills = () => {
   }, []);
 
   return (
-    <section className="all-skills-wrapper">
-      <h2 className="all-skills-title">Stack</h2>
+    <section className="all-skills-wrapper" id='skills'>
+      <h2 className="all-skills-title">Skills</h2>
       {categories.map(category => {
         const skillsInCategory = allSkills.filter(skill =>
           skill['skill-category']?.includes(category.id)

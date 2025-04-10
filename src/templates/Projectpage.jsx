@@ -4,6 +4,8 @@ import { restBase } from '../utilities/Utilities';
 import ACFImage from '../components/ACFImage';
 import Skill from '../components/Skill';
 import '../assets/styles/component/_projectpage.scss'
+import { FaGithub } from 'react-icons/fa6'
+import { LuSquareArrowOutUpRight } from "react-icons/lu";
 
 const ProjectPage = () => {
   const { id } = useParams();
@@ -48,6 +50,10 @@ const ProjectPage = () => {
               <Skill key={skillId} skillId={skillId} />
             ))}
           </div>
+          <div className='project-icons'>
+              <a href={project.acf?.github_url} target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+              <a href={project.acf?.link} target="_blank" rel="noopener noreferrer"><LuSquareArrowOutUpRight /></a>
+          </div>
       </div>
      </div>
       <h3 className='desctription-heading'>Overview</h3>
@@ -56,8 +62,6 @@ const ProjectPage = () => {
       <div className='project-text'  dangerouslySetInnerHTML={{ __html: project.acf?.challenges }}></div>
       <h3 className='desctription-heading'>Learning</h3>
       <div id='learning' dangerouslySetInnerHTML={{ __html: project.acf?.learning }}></div>
-
-      <a href={project.acf?.link} target="_blank" rel="noopener noreferrer">Live Project</a>
     </section>
   );
 };

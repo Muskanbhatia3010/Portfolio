@@ -3,13 +3,15 @@ import { useState, useEffect, useRef } from 'react';
 import { restBase } from '../utilities/Utilities';
 import Skill from './Skill';
 import '../assets/styles/component/_featuredproject.scss';
+import { useNavigate } from 'react-router-dom';
 
 const PhoneShowcase = () => {
 
   const phoneRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const restPath = restBase + 'projects/87?_embed' 
-  const [restData, setData] = useState([])
+  const restPath = restBase + 'projects/87?_embed' ;
+  const [restData, setData] = useState([]);
+  const navigate = useNavigate();
   
   useEffect(() => {
     const fetchData = async () => {
@@ -51,7 +53,7 @@ const PhoneShowcase = () => {
         </div>
         <h3>{restData.title?.rendered}</h3>
         <p className='description'>{restData.acf?.shortdescription}</p>
-        <a className='call-to-action' href="#">
+        <a className='call-to-action'  onClick={() => navigate(`/projects/87`)}>
           <p className="btn-text">View Project</p>
         </a>
     </section>

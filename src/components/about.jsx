@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
-import AllSkills from './AllSkill'
-import '../assets/styles/templates/_home.scss'
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa6'
+import '../assets/styles/component/_about.scss';
 
 const About = () => {
     const restPath = restBase + 'pages/14' 
@@ -19,10 +19,18 @@ const About = () => {
     }, [restPath])
     return (
         <>
-           <div>
-                <AllSkills />   
-                <p>{restData.acf?.about}</p>  
-           </div>       
+           <section className='about' id='about'>
+               <h2>About</h2>
+               <div className='text' dangerouslySetInnerHTML={{ __html: restData.acf?.about }}></div>
+                <div className='contact'>
+                <div className='message' dangerouslySetInnerHTML={{ __html: restData.acf?.contactmsg }}></div>
+                    <div className='contact-icons'>
+                         <a href={restData.acf?.contact_github.url} target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+                         <a href={restData.acf?.contact_mail.url} target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+                         <a href={restData.acf?.contact_linkedin.url} target="_blank" rel="noopener noreferrer"><FaEnvelope /></a>
+                    </div>
+                </div>
+           </section>       
         </>
     )
 }

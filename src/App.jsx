@@ -1,5 +1,4 @@
 import { Route, Routes, Link, NavLink } from 'react-router-dom'
-import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './templates/Home';
 import ProjectPage from './templates/Projectpage';
@@ -18,7 +17,6 @@ function App() {
               <Route path="/projects/:id" element={<ProjectPage />} />
             </Routes>
         </main>
-        <Footer />
       </div>
     </>
   );
