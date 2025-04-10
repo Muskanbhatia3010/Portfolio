@@ -22,7 +22,7 @@ const About = () => {
            <section className='about' id='about'>
                <h2>About</h2>
                <div className='text' dangerouslySetInnerHTML={{ __html: restData.acf?.about }}></div>
-                <div className='contact'>
+                <div className='contact' id='contact'>
                 <div className='message' dangerouslySetInnerHTML={{ __html: restData.acf?.contactmsg }}></div>
                     <div className='contact-icons'>
                          <a href={restData.acf?.contact_github.url} target="_blank" rel="noopener noreferrer"><FaGithub /></a>
