@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa6'
 import '../assets/styles/component/_about.scss';
+import Footer from './Footer';
 
 const About = () => {
     const restPath = restBase + 'pages/14' 
@@ -25,12 +26,14 @@ const About = () => {
                 <div className='contact' id='contact'>
                 <div className='message' dangerouslySetInnerHTML={{ __html: restData.acf?.contactmsg }}></div>
                     <div className='contact-icons'>
-                         <a href={restData.acf?.contact_github.url} target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-                         <a href={restData.acf?.contact_mail.url} target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-                         <a href={restData.acf?.contact_linkedin.url} target="_blank" rel="noopener noreferrer"><FaEnvelope /></a>
+                         <a href={restData.acf?.contact_github.url} ><FaGithub /></a>
+                         <a href={restData.acf?.contact_linkedin.url} ><FaLinkedin /></a>
+                         <a href={restData.acf?.contact_mail.url} ><FaEnvelope /></a>
                     </div>
                 </div>
-           </section>       
+                
+                <Footer/> 
+           </section>      
         </>
     )
 }

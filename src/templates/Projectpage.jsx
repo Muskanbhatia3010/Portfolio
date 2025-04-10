@@ -40,9 +40,9 @@ const ProjectPage = () => {
   return (
     <section className="project-page">
       <h2 className='Project-name'>{project.title.rendered}</h2>
-     <div className="project-info">
+      <div className="project-info">
         {carouselImage && <ACFImage className='Project-image' image={carouselImage} />}
-      <div className='project-description'>
+        <div className='project-description'>
           <p>{project.acf?.shortdescription}</p>
     
           <div className="project-skills">
@@ -51,15 +51,19 @@ const ProjectPage = () => {
             ))}
           </div>
           <div className='project-icons'>
-              <a href={project.acf?.github_url} target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-              <a href={project.acf?.link} target="_blank" rel="noopener noreferrer"><LuSquareArrowOutUpRight /></a>
+            {project.acf?.github_url && (
+              <a href={project.acf.github_url}><FaGithub /></a>
+            )}
+            {project.acf?.link && (
+              <a href={project.acf.link}><LuSquareArrowOutUpRight /></a>
+            )}
           </div>
+        </div>
       </div>
-     </div>
       <h3 className='desctription-heading'>Overview</h3>
       <div className='project-text' dangerouslySetInnerHTML={{ __html: project.acf?.overview }}></div>
       <h3 className='desctription-heading'>Challenges</h3>
-      <div className='project-text'  dangerouslySetInnerHTML={{ __html: project.acf?.challenges }}></div>
+      <div className='project-text' dangerouslySetInnerHTML={{ __html: project.acf?.challenges }}></div>
       <h3 className='desctription-heading'>Learning</h3>
       <div id='learning' dangerouslySetInnerHTML={{ __html: project.acf?.learning }}></div>
     </section>

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { restBase } from '../utilities/Utilities'
 import ACFImage from './ACFImage'
-import { FaHome, FaProjectDiagram, FaUserAlt, FaCode, FaEnvelope } from 'react-icons/fa';
 import '../assets/styles/component/_header.scss'
 
 const Header = () => {
@@ -65,16 +64,36 @@ const Header = () => {
                 <h2 className="typing-tagline">{text}<span className="cursor">|</span></h2>
             </section>
             <a className='call-to-action' href="#projects">
-                <p className="btn-text">View Projects</p>
+                <p className="btn-text">My Projects</p>
             </a>
           </div>
           <nav>
             <ul className='footer-nav'>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#projects"> Projects</a></li>
-            <li><a href="#about"> About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact"> Contact</a></li>
+            <li><a
+  href={window.location.pathname === '/' ? '#home' : '/#home'}
+>
+  Home
+</a></li>
+            <li><a
+  href={window.location.pathname === '/' ? '#projects' : '/#projects'}
+>
+  Projects
+</a></li>
+            <li><a
+  href={window.location.pathname === '/' ? '#about' : '/#about'}
+>
+ About
+</a></li>
+            <li><a
+  href={window.location.pathname === '/' ? '#skills' : '/#skills'}
+>
+Skills
+</a></li>
+            <li><a
+  href={window.location.pathname === '/' ? '#contact' : '/#contact'}
+>
+ Contact
+</a></li>
             </ul>
           </nav>
           </div>

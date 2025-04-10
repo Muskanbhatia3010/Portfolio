@@ -63,9 +63,6 @@
     .FeaturedProject {
       height: 100vh;
       justify-content: space-evenly;
-      position: sticky;
-      top:0;
-      z-index: 1;
 
       .Image-layout-wrapper{
         .phone-mockup{
@@ -74,3 +71,10 @@
       }
   }
 }}
+@media(min-width:$sticky-breakpoint){
+  .FeaturedProject{
+      position: sticky;
+      top:0;
+      z-index: 1;
+}
+}

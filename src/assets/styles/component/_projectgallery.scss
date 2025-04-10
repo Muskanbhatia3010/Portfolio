@@ -19,6 +19,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
+    padding: 1rem;
     .project-card{
       max-width: 13vw;
       min-width: 13rem;
@@ -76,9 +77,10 @@
     }
   }
   }
-@media (min-width: 768px){
+@media (min-width: $sticky-breakpoint){
   .project-gallery{
     position: sticky;
+    top:0;
     z-index: 4;
 }
 }

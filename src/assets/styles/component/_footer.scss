@@ -1,1 +1,14 @@
 @use "../core/variables" as *;
+.footer {
+    position: relative;
+    text-align: end;
+    z-index: 9;
+    padding:  0 1rem 4rem;
+    font-family: $body-font;
+    font-size: $body-font-size;
+}
+@media(min-width:$tablet-breakpoint){
+    .footer{
+        padding: 0 2rem 1.5rem;
+    }
+}

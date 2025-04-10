@@ -54,7 +54,7 @@
         margin: 0rem;
        }
        p{
-        font-size: 0.8rem;
+        font-size: $body-font-size;;
         flex-direction: column;
         display: flex;
         margin: 0;
@@ -64,10 +64,16 @@
 }
 @media (min-width: $tablet-breakpoint){
     .all-skills-wrapper{
-        position: sticky;
-        z-index: 5;
         .skills-grid{
             grid-template-columns: repeat(3, minmax(0, 1fr));
         }
     }
 }
+@media (min-width: $sticky-breakpoint) {
+    .all-skills-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+  }
+ 

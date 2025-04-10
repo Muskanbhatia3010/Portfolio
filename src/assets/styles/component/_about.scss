@@ -17,7 +17,7 @@
     }
   
     .text {
-      padding: $padding-text;
+      padding: $padding-text;;
       ul {
         margin: 0;
         padding: 0;
@@ -57,19 +57,30 @@
           color: $heading-color;
           font-size: 2rem;
           transition: all 0.3s ease-in-out;
-  
-          &:hover {
-            transform: scale(1.2);
-            color: #000000;
-          }
         }
       }
     }
   }
   @media(min-width: $tablet-breakpoint){
     .about{
-        position: sticky;
-        top:0;
-        z-index: 6;
+      .text{
+        margin: 2rem 0;
+      }
+        .contact{
+          a{
+            &:hover {
+              transform: scale(1.2);
+              color: #000000;
+            }
+          }
+        }
     }
 }  
+@media (min-width: $sticky-breakpoint) {
+    .about {
+      position: sticky;
+      top: 0;
+      z-index: 6;
+    }
+  }
+ 

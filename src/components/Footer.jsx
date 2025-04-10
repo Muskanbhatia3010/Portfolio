@@ -1,7 +1,8 @@
+import '../assets/styles/component/_footer.scss'
 const Footer = () => {
     return (
-        <footer>
-           <copy>Copyright 2025</copy>
+        <footer className='footer'>
+           <span>&copy; {new Date().getFullYear()} Muskan Bhatia</span>
         </footer>
     );
 };
